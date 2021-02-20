@@ -31,6 +31,7 @@ dependencies:
   - vim
   - pdoc3
   - sphinx
+  - nbsphinx
   - myst-parser
   - dask
   - distributed
@@ -54,6 +55,9 @@ dependencies:
   - pip:
     - furo
     - sphinx-autobuild
+    - sphinx_math_dollar
+    - sphinxcontrib.bibtex
     - watchmagic
     - jupytext
     - "-e /Users/gunnar/Projects/python/gvpy"
+    - "-e ."

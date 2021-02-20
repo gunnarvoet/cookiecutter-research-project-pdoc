@@ -1,5 +1,7 @@
 # Overview
 
-This project
+This project needs some more work.
 
-<!-- <img alt="" src="../fig/map_overview.png" style="max-width:400px;width:100%"> -->
+<img alt="" src="../fig/testbild.jpg" style="max-width:400px;width:100%">
+
+Cite like this: {cite}`voetetal20`.
