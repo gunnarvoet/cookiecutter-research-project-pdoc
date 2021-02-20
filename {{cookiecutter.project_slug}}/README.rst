@@ -10,14 +10,6 @@
 * Free software: {{ cookiecutter.open_source_license }}
 {% endif %}
 
-Key Points
-----------
-.. start elevator pitch
-
-- Finding 1
-- Finding 2
-
-.. end elevator pitch
 
 Features
 --------

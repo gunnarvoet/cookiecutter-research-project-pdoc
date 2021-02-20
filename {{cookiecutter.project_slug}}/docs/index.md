@@ -5,11 +5,6 @@ hide-toc: true
 # {{ cookiecutter.project_name }}
 
 
-## Key Points
-```{include} ../README.rst
-:start-after: .. start elevator-pitch
-:end-before: .. end elevator-pitch
-```
 
 ```{toctree}
 :caption: Contents
