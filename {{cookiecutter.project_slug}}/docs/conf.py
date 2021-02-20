@@ -71,9 +71,6 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 numfig = True
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
@@ -87,6 +84,7 @@ master_doc = 'index'
 project = '{{ cookiecutter.project_name }}'
 copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
 author = "{{ cookiecutter.full_name }}"
+html_title = '{{ cookiecutter.project_name }}'
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
