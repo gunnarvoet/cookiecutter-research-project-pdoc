@@ -1,0 +1,59 @@
+name: {{ cookiecutter.project_name.lower().replace(' ', '_') }}
+channels:
+  - conda-forge
+dependencies:
+  # Required for full project functionality (dont remove)
+  - pytest
+  # Examples (remove and add as needed)
+  - python=3.8
+  - ipympl
+  - ipdb
+  - black
+  - ipykernel
+  - ipython
+  - jupyter
+  - jupyter_nbextensions_configurator
+  - jupyter_contrib_nbextensions
+  - matplotlib
+  - cartopy
+  - cmocean
+  - nbconvert
+  - nbformat
+  - numpy
+  - pandas
+  - scipy
+  - tqdm
+  - xarray
+  - netcdf4
+  - xgcm
+  - palettable
+  - pip
+  - vim
+  - pdoc3
+  - sphinx
+  - myst-parser
+  - dask
+  - distributed
+  - bottleneck
+  - esmpy
+  - intake-xarray
+  - geopy
+  - xesmf
+  - esmf
+  - ffmpeg
+  - aiohttp
+  - eofs
+  - gsw
+  - pycwt
+  - seaborn
+  - xhistogram
+  - nc-time-axis
+  - fastjmd95
+  - cf_xarray
+  - xmitgcm
+  - pip:
+    - furo
+    - sphinx-autobuild
+    - watchmagic
+    - jupytext
+    - "-e /Users/gunnar/Projects/python/gvpy"
