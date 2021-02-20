@@ -51,6 +51,6 @@ A simple way of showing an image (figure resizes):
 
 Some more text.
 
-Here is a reference to {numref}`fig-test`. We can also [link](fig-sketch) to figures in this way, across pages.
+Here is a reference to {numref}`fig-test`.
 
 Refer to {class}`{{ cookiecutter.project_slug }}.io`.
