@@ -22,4 +22,4 @@ help:
 # sphinx-autobuild
 # https://github.com/executablebooks/sphinx-autobuild
 livehtml:
-	sphinx-autobuild --watch ../$(SPHINXPROJ)/ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	sphinx-autobuild --port 0 --watch ../$(SPHINXPROJ)/ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
