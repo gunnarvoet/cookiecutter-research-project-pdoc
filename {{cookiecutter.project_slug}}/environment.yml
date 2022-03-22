@@ -5,15 +5,7 @@ dependencies:
   # Required for full project functionality (dont remove)
   - pytest
   # Examples (remove and add as needed)
-  - python=3.8
-  - ipympl
-  - ipdb
-  - black
-  - ipykernel
-  - ipython
-  - jupyter
-  - jupyter_nbextensions_configurator
-  - jupyter_contrib_nbextensions
+  - python=3.10
   - matplotlib
   - cartopy
   - cmocean
