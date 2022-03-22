@@ -23,44 +23,62 @@ def load_config() -> Box:
     cfg : Box
         Config parameters dictionary with dot access.
     """
-    try:
-        configfile = Path("config.yml")
-        assert configfile.exists()
-    except AssertionError:
-        try:
-            configfile = Path("../config.yml")
-            assert configfile.exists()
-        except AssertionError:
-            try:
-                configfile = Path("../../config.yml")
-                assert configfile.exists()
-            except AssertionError:
-                cwd = os.getcwd()
-                print(f"cannot locate config.yml in {cwd} or its parent directory")
-                return
+
+    def find_config_file():
+        parents = list(Path.cwd().parents)
+        for pi in parents:
+            if pi.as_posix().endswith("{{cookiecutter.project_slug}}"):
+                files = list(pi.glob("config.yml"))
+                if len(files) == 1:
+                    cfile = files[0]
+        return cfile
+
+    configfile = find_config_file()
     with open(configfile, "r") as ymlfile:
         cfg = Box(yaml.safe_load(ymlfile))
+
     # Convert paths to Path objects
     cfg.path.root = Path(cfg.path.root)
+    cfg.path.proc = Path(cfg.path.proc)
     cfg.path.data = cfg.path.root.joinpath(cfg.path.data)
     cfg.path.fig = cfg.path.root.joinpath(cfg.path.fig)
 
-    # # Construct paths for obs output
-    # for k, v in cfg.obs.output.items():
-    #     cfg.obs[k] = cfg.path.data.joinpath(v)
-    # # Construct paths for model output
-    # for k, v in cfg.model.output.items():
-    #     cfg.model[k] = cfg.path.data.joinpath(v)
+    def replace_variables(dict_in, var, rootpath):
+        d = dict_in.copy()
+        n = len(var)
+        for k, v in d.items():
+            if isinstance(v, collections.abc.Mapping):
+                d[k] = replace_variables(d.get(k, {}), var, rootpath)
+            elif isinstance(v, str):
+                if v.startswith(var + "/"):
+                    d[k] = rootpath.joinpath(v[n + 1 :])
+            else:
+                d[k] = v
+        return d
+
+    # Replace variables from the yaml file.
+    cfg = replace_variables(cfg, "$data", cfg.path.data)
+    cfg = replace_variables(cfg, "$proc", cfg.path.proc)
 
     return cfg
 
 
-def png(fname, **kwargs):
+def print_config(print_values=False):
+    config = load_config()
+    gv.misc.pretty_print(config, print_values=print_values)
+
+
+def png(fname, subdir=None, **kwargs):
     """Save figure as png to the path defined in config.yml.
+
     Parameters
     ----------
     fname : str
         Figure name without file extension.
     """
     cfg = load_config()
-    gv.plot.png(fname, figdir=cfg.path.fig)
+    if subdir is not None:
+        figdir = cfg.path.fig.joinpath(subdir)
+    else:
+        figdir = cfg.path.fig
+    gv.plot.png(fname, figdir=figdir, **kwargs)
