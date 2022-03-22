@@ -2,18 +2,16 @@
 Cookiecutter Research Project
 ======================
 
-Cookiecutter_ template for a research project using Python code and Sphinx docs.
+Cookiecutter_ template for a research project using Python code and pdoc_ docs.
 
-* GitHub repo: https://github.com/gunnarvoet/cookiecutter-research-project/
+* GitHub repo: https://github.com/gunnarvoet/cookiecutter-research-project-pdoc/
 * Free software: BSD license
 
 Features
 --------
 
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``pytest``
-* Sphinx_ docs: Documentation ready for generation with, for example, `Read the Docs`_
-* bump2version_: Pre-configured version bumping with a single command
-* Command line interface using Click (optional)
+* pdoc_ docs: Documentation ready
 
 .. _Cookiecutter: https://github.com/cookiecutter/cookiecutter
 
@@ -29,7 +27,7 @@ Cookiecutter 1.4.0 or higher)::
 
 Generate a Python-based research project::
 
-    cookiecutter https://github.com/gunnarvoet/cookiecutter-research-project.git
+    cookiecutter https://github.com/gunnarvoet/cookiecutter-research-project-pdoc.git
 
 Then:
 
@@ -40,4 +38,4 @@ Then:
 .. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 
 .. _Sphinx: http://sphinx-doc.org/
-.. _bump2version: https://github.com/c4urself/bump2version
+.. _pdoc: https://pdoc.dev/
