@@ -19,7 +19,7 @@ Features
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `gunnarvoet/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter_ and the `gunnarvoet/cookiecutter-research-project-pdoc`_ project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`gunnarvoet/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _`gunnarvoet/cookiecutter-research-project-pdoc`: https://github.com/gunnarvoet/cookiecutter-research-project-pdoc

@@ -12,7 +12,7 @@ Features
 
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``pytest``
 * pdoc_ docs: Documentation ready
-* yaml config file (template generated with post hook)
+* yaml config file (template generated with post hook) with reading function in *io*.
 
 .. _Cookiecutter: https://github.com/cookiecutter/cookiecutter
 
@@ -32,11 +32,9 @@ Generate a Python-based research project::
 
 Then:
 
-* Install conda environment (``conda env create -f environment.yml``)
-* Add a ``requirements.txt`` file that specifies the packages you will need for
-  your project and their versions. For more info see the `pip docs for requirements files`_.
+* Install the conda environment (``conda env create -f environment.yml``)
+* Install additonal packages like jupyter notebook. Gunnar installs these using pip and a *requirements.txt* file and has a little script that just does this. This way non-essential packages are kept outside the *environment.yml* for this package.
 
-.. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 
 .. _Sphinx: http://sphinx-doc.org/
 .. _pdoc: https://pdoc.dev/
