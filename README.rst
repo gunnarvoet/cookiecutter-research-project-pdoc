@@ -12,6 +12,7 @@ Features
 
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``pytest``
 * pdoc_ docs: Documentation ready
+* yaml config file (template generated with post hook)
 
 .. _Cookiecutter: https://github.com/cookiecutter/cookiecutter
 

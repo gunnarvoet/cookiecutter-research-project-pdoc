@@ -36,13 +36,13 @@ test: ## run tests
 	python setup.py test
 {%- endif %}
 
-docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/{{ cookiecutter.project_slug }}.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -M --tocfile api --separate -o docs/ {{ cookiecutter.project_slug }}
-	$(MAKE) -C docs clean
-	$(MAKE) -C docs html
-	$(BROWSER) docs/_build/html/index.html
 
-servedocs: docs ## compile the docs watching for changes
-	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
+
+docs: ## generate documentation using pdoc
+	rm -rf docs
+	pdoc -d numpy -o docs {{ cookiecutter.project_slug }}
+	$(BROWSER) docs/index.html
+
+servedocs: ## compile the docs & watch for changes
+	pdoc -d numpy {{ cookiecutter.project_slug }}
+	# $(BROWSER) http://localhost:8080

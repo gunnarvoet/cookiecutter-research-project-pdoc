@@ -7,8 +7,6 @@ dependencies:
   - matplotlib
   - cartopy
   - cmocean
-  - nbconvert
-  - nbformat
   - numpy
   - pandas
   - scipy
@@ -16,9 +14,6 @@ dependencies:
   - xarray
   - netcdf4
   - palettable
-  - sphinx
-  - nbsphinx
-  - myst-parser
   - dask
   - distributed
   - bottleneck
@@ -27,11 +22,6 @@ dependencies:
   - yaml
   - pip
   - pip:
-    - furo
-    - sphinx-autobuild
-    - sphinx_math_dollar
-    - sphinxcontrib.bibtex
-    - watchmagic
-    - jupytext
+    - pdoc
     - "-e /Users/gunnar/Projects/python/gvpy"
     - "-e ."
