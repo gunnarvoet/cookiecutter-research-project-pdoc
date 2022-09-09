@@ -5,6 +5,7 @@ Read and write data.
 """
 
 from pathlib import Path
+import collections.abc
 import os
 import yaml
 from box import Box
