@@ -11,6 +11,9 @@
 
 -   TODO
 
+## Tools
+This software comes with [pdoc](https://pdoc.dev/) documentation. The included [Makefile](Makefile) has recipes `servedocs` to display the documentation, including a watchdog that acts on file changes, and `docs` to generate the html files.
+
 ## Credits
 
 This package was created with
