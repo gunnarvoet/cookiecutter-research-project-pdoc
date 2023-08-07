@@ -26,9 +26,15 @@ def load_config() -> Box:
     """
 
     def find_config_file():
-        parents = list(Path.cwd().parents)
-        for pi in parents:
-            if pi.as_posix().endswith("{{cookiecutter.project_slug}}"):
+        # first look in current directory
+        cwd = Path(".").absolute()
+        files = list(cwd.glob("config.yml"))
+        if len(files) == 1:
+            cfile = files[0]
+        else:
+            # otherwise go through parent directories
+            parents = list(Path.cwd().parents)
+            for pi in parents:
                 files = list(pi.glob("config.yml"))
                 if len(files) == 1:
                     cfile = files[0]
@@ -37,9 +43,22 @@ def load_config() -> Box:
     configfile = find_config_file()
     with open(configfile, "r") as ymlfile:
         cfg = Box(yaml.safe_load(ymlfile))
+    cfg.path.root = configfile.parent
+    # def find_config_file():
+    #     parents = list(Path.cwd().parents)
+    #     for pi in parents:
+    #         if pi.as_posix().endswith("blt"):
+    #             files = list(pi.glob("config.yml"))
+    #             if len(files) == 1:
+    #                 cfile = files[0]
+    #     return cfile
+
+    # configfile = find_config_file()
+    # with open(configfile, "r") as ymlfile:
+    #     cfg = Box(yaml.safe_load(ymlfile))
 
     # Convert paths to Path objects
-    cfg.path.root = Path(cfg.path.root)
+    # cfg.path.root = Path(cfg.path.root)
     cfg.path.proc = Path(cfg.path.proc)
     cfg.path.data = cfg.path.root.joinpath(cfg.path.data)
     cfg.path.fig = cfg.path.root.joinpath(cfg.path.fig)
