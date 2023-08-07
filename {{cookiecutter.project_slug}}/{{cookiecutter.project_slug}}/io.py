@@ -97,12 +97,14 @@ def print_config(print_values=False):
 
 
 def png(fname, subdir=None, **kwargs):
-    """Save figure as png to the path defined in config.yml.
+    """Save figure as png to the figure path defined in config.yml.
 
     Parameters
     ----------
     fname : str
         Figure name without file extension.
+    subdir : str, optional
+        Save figure to this subdirectory within the project figure directory.
     """
     cfg = load_config()
     if subdir is not None:
@@ -110,3 +112,24 @@ def png(fname, subdir=None, **kwargs):
     else:
         figdir = cfg.path.fig
     gv.plot.png(fname, figdir=figdir, **kwargs)
+
+
+def pdf(fname, subdir=None):
+    """Save figure as pdf to the figure path defined in config.yml.
+
+    Parameters
+    ----------
+    fname : str
+        Figure name without file extension.
+    subdir : str, optional
+        Save figure to this subdirectory within the project figure directory.
+    """
+    fname = fname + ".pdf"
+    cfg = load_config()
+    if subdir is not None:
+        figdir = cfg.path.fig.joinpath(subdir)
+        figdir.mkdir(exist_ok=True)
+    else:
+        figdir = cfg.path.fig
+    print("saving pdf to {}/".format(figdir))
+    plt.savefig(figdir.joinpath(fname), bbox_inches="tight", dpi=200)
