@@ -84,8 +84,16 @@ def load_config() -> Box:
 
 
 def print_config(print_values=False):
-    config = load_config()
-    gv.misc.pretty_print(config, print_values=print_values)
+    """Pretty print project configuration.
+
+    Parameters
+    ----------
+    print_values : bool, optional
+        Show values (instead of keys only).
+    """
+
+    cfg = load_config()
+    gv.misc.pretty_print(cfg, print_values=print_values)
 
 
 def png(fname, subdir=None, **kwargs):
