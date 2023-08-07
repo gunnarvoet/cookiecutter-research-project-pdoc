@@ -8,11 +8,9 @@ from pathlib import Path
 import collections.abc
 import yaml
 from box import Box
-import warnings
+import matplotlib.pyplot as plt
 
 import gvpy as gv
-
-warnings.filterwarnings("ignore", message="Mean of empty slice")
 
 
 def load_config() -> Box:
