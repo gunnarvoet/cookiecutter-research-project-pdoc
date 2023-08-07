@@ -40,9 +40,9 @@ test: ## run tests
 
 docs: ## generate documentation using pdoc
 	rm -rf docs
-	pdoc -d numpy -o docs {{ cookiecutter.project_slug }}
+	pdoc -d numpy -o docs -t .pdoc --math {{ cookiecutter.project_slug }}
 	$(BROWSER) docs/index.html
 
 servedocs: ## compile the docs & watch for changes
-	pdoc -d numpy {{ cookiecutter.project_slug }}
+	pdoc -d numpy -t .pdoc --math {{ cookiecutter.project_slug }}
 	# $(BROWSER) http://localhost:8080
