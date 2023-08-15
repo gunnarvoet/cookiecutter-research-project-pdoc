@@ -2,10 +2,6 @@
 
 Say something here about the project.
 
-# License
-
-.. include:: ../LICENSE
-
 {% if cookiecutter.custom_pdoc_theme == 'y' -%}
 # Markdown Syntax
 ## Figures
@@ -22,3 +18,8 @@ Wide image:
 ![wimage](path/to/figure)
 ```
 {% endif %}
+
+# License
+
+.. include:: ../LICENSE
+
