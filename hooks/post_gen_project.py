@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+
+import subprocess
 import os
 from pathlib import Path
 import yaml
@@ -26,6 +28,15 @@ def generate_cfg_file():
         yaml.dump(path, outfile, default_flow_style=False)
         yaml.dump(data, outfile, default_flow_style=False)
 
+def git_init():
+    subprocess.run(["git", "init"])
+    subprocess.run(["git", "add", "."])
+    subprocess.run(["git", "commit", "-m", "'initial commit'"])
+
+def add_pdoc_theme_submodule():
+    subprocess.run(["git", "submodule", "add", "https://github.com/gunnarvoet/pdoc-theme-gv", ".pdoc-theme-gv"])
+    subprocess.run(["git", "commit", "-m", "'add pdoc theme submodule'"])
+
 
 if __name__ == '__main__':
 
@@ -37,3 +48,8 @@ if __name__ == '__main__':
         remove_file('LICENSE')
 
     generate_cfg_file()
+    git_init()
+
+    if 'y'  == '{{ cookiecutter.custom_pdoc_theme}}':
+        add_pdoc_theme_submodule()
+
