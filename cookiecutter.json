@@ -8,5 +8,8 @@
   "version": "0.1.0",
   "use_pytest": "y",
   "command_line_interface": ["No command-line interface", "Click", "Argparse"],
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
+  "_copy_without_render": [
+        ".github/workflows/docs.yml"
+    ]
 }
