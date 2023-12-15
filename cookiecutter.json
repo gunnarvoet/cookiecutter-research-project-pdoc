@@ -1,7 +1,7 @@
 {
-  "full_name": "Audrey Roy Greenfeld",
-  "email": "audreyr@example.com",
-  "github_username": "audreyr",
+  "full_name": "Gunnar Voet",
+  "email": "email@domain",
+  "github_username": "gunnarvoet",
   "project_name": "NewProject",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Bare bones structure for Python-based research project with pdoc documentation.",
