@@ -2,5 +2,9 @@
 
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
-from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
+import {{ cookiecutter.project_slug }}
+
+def test_read_config():
+    cfg = {{ cookiecutter.project_slug }}.io.load_config()
+    assert isinstance(cfg, dict)
 
