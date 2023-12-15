@@ -27,7 +27,7 @@ help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 lint: ## check style with flake8
-	flake8 {{ cookiecutter.project_slug }} tests
+	ruff check {{ cookiecutter.project_slug }}
 
 test: ## run tests
 	pytest
