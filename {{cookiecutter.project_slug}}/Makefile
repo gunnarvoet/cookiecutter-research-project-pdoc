@@ -30,13 +30,7 @@ lint: ## check style with flake8
 	flake8 {{ cookiecutter.project_slug }} tests
 
 test: ## run tests
-{%- if cookiecutter.use_pytest == 'y' %}
 	pytest
-{%- else %}
-	python setup.py test
-{%- endif %}
-
-
 
 docs: ## generate documentation using pdoc
 	rm -rf docs

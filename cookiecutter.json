@@ -6,7 +6,6 @@
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Bare bones structure for Python-based research project with pdoc documentation.",
   "version": "2023.12.0",
-  "use_pytest": "y",
   "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
   "custom_pdoc_theme": "y",
   "_copy_without_render": [
