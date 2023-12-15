@@ -20,6 +20,7 @@ dependencies:
   - gsw
   - python-box
   - yaml
+  - ruff
   - pip
   - pip:
     - pdoc
