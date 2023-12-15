@@ -17,6 +17,10 @@ Wide image:
 ```markdown
 ![wimage](path/to/figure)
 ```
+
+Here is an example:
+
+![image](../fig/testbild.jpg)
 {% endif %}
 
 # License
