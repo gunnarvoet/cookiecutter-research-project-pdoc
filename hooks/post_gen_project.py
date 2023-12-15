@@ -22,6 +22,7 @@ def generate_cfg_file():
     example = dict(tmp = "$data/test.data")
     with open('config.yml', 'w') as outfile:
         yaml.dump(base_paths, outfile, default_flow_style=False)
+        outfile.write("\n# data path can be set with $data variable:\n")
         yaml.dump(example, outfile, default_flow_style=False)
 
 def generate_sample_data():
