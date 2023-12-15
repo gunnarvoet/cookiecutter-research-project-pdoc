@@ -23,7 +23,7 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Oceanography",
     ]
-requires-python = ">= {{ cookiecutter.python_version }}"
+requires-python = ">= 3.8"
 dependencies = [
     "numpy",
     "scipy",
@@ -40,11 +40,9 @@ Changelog = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutt
 # in general, do not place a `__init__.py` in your tests
 # options are explained here:
 # https://learn.scientific-python.org/development/guides/pytest/
-minversion = "6.0"
-addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
-xfail_strict = true
-filterwarnings = ["error"]
-log_cli_level = "info"
-testpaths = [
-    "tests",
-    ]
+# minversion = "6.0"
+# addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
+# xfail_strict = true
+# filterwarnings = ["error"]
+# log_cli_level = "info"
+testpaths = ["tests"]

@@ -13,20 +13,20 @@ def remove_file(filepath):
     os.remove(os.path.join(PROJECT_DIRECTORY, filepath))
 
 def generate_cfg_file():
-    path = dict(
+    base_paths = dict(
         path = dict(
-            root = PROJECT_DIRECTORY,
-            proc = parent.joinpath('data').as_posix(),
             data = 'data/',
             fig = 'fig/',
         )
     )
-    data = dict(
-            instrument_type = dict(mooring_name='$proc/path/to/processed/file.nc')
-            )
+    example = dict(tmp = "$data/test.data")
     with open('config.yml', 'w') as outfile:
-        yaml.dump(path, outfile, default_flow_style=False)
-        yaml.dump(data, outfile, default_flow_style=False)
+        yaml.dump(base_paths, outfile, default_flow_style=False)
+        yaml.dump(example, outfile, default_flow_style=False)
+
+def generate_sample_data():
+    subprocess.run(["mkdir", "data"])
+    subprocess.run(["touch", "data/test.data"])
 
 def git_init():
     subprocess.run(["git", "init"])
@@ -44,6 +44,7 @@ if __name__ == '__main__':
         remove_file('LICENSE')
 
     generate_cfg_file()
+    generate_sample_data()
     git_init()
 
     if 'y'  == '{{ cookiecutter.custom_pdoc_theme}}':
