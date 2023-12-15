@@ -10,11 +10,11 @@ research project using Python code and [pdoc](https://pdoc.dev/) for API docs.
 
 # Features
 
-- Testing setup with `unittest` and `python setup.py test` or `pytest`
+- Testing setup with `pytest`
 - [pdoc](https://pdoc.dev/) docs: Documentation ready
 - Optionally add custom [pdoc theme](https://github.com/gunnarvoet/pdoc-theme-gv) as git submodule
 - yaml config file (template generated with post hook) with reading function in
-  *io*.
+  [io]({{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/io.py).
 - GitHub action for auto-generating & deploying docs.
 
 # Quickstart
